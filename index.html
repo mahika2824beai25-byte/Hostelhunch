@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hostelhunch — Hostel Kitchen Companion</title>
+ <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image" href="site icon.png">
+</head>
+<body>
+
+  
+  <header>
+    <div class="logo-icon">❄️</div>
+    <div class="logo-text">
+      <h1>Hostelhunch</h1>
+      <p>HOSTEL KITCHEN COMPANION</p>
+    </div>
+    <div class="header-stats">
+      <div class="stat-badge">
+        <span class="num" id="total-count">0</span>
+        <span class="lbl">ITEMS</span>
+      </div>
+      <div class="stat-badge">
+        <span class="num" id="expiry-count" >0</span>
+        <span class="lbl">EXPIRING</span>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="app-wrapper">
+
+    <div class="left-panel">
+
+      <div class="panel-header">
+        <span class="panel-title">🧊 My Fridge</span>
+        <button class="btn btn-ghost" onclick="clearAll()">Clear All</button>
+      </div>
+
+
+      <div class="add-form">
+        <div class="form-row">
+          <div>
+            <input
+              type="text"
+              id="item-name"
+              placeholder="Item name"
+              maxlength="40"
+              oninput="showSynonymHint()"
+            >
+            <div class="synonym-hint" id="synonym-hint"></div>
+          </div>
+          <select id="item-cat">
+            <option value="dairy">🥛 Dairy</option>
+            <option value="veggies">🥦 Veggies</option>
+            <option value="fruits">🍎 Fruits</option>
+            <option value="grains">🍞 Grains</option>
+            <option value="protein">🥚 Protein</option>
+            <option value="condiments">🧴 Condiments</option>
+            <option value="snacks">🍿 Snacks</option>
+            <option value="drinks">🧃 Drinks</option>
+            <option value="other">📦 Other</option>
+          </select>
+        </div>
+        <div class="form-row three">
+          <input type="text" id="item-qty" placeholder="Qty">
+          <input type="text" id="item-unit" placeholder="Unit">
+          <input type="date" id="item-expiry">
+        </div>
+        <button class="btn btn-amber btn-full" onclick="addItem()">+ Add to Fridge</button>
+      </div>
+
+      
+      <div class="quick-add">
+        <div class="quick-add-label">QUICK ADD</div>
+        <div class="quick-chips" id="quick-chips"></div>
+      </div>
+
+     
+      <div class="filter-bar" id="filter-bar"></div>
+
+      
+      <div class="items-list" id="items-list">
+      </div>
+
+    </div>
+  
+    <div class="right-panel">
+
+      <div class="recipe-toolbar">
+        <h2>🍳 Recipe Ideas</h2>
+        <select id="meal-type" style="width:140px;">
+          <option value="any">🍽 Any Meal</option>
+          <option value="breakfast">🌅 Breakfast</option>
+          <option value="lunch">☀️ Lunch</option>
+          <option value="dinner">🌙 Dinner</option>
+          <option value="snack">🍿 Snack</option>
+        </select>
+        <button class="btn btn-amber" onclick="getRecipes()">👩🏻‍🍳 Suggest Recipes</button>
+      </div>
+
+     
+      <div class="recipe-content" id="recipe-panel">
+        <div class="welcome-state">
+          <span class="welcome-icon">👨‍🍳</span>
+          <h2>What can you cook today?</h2>
+
+          <p>
+            Add ingredients — in
+            <strong style="color:rgb(245, 166, 35)">English or Hindi</strong>
+            — then hit Suggest Recipes for instant ideas.
+          </p>
+
+          <div class="hindi-note">
+            🇮🇳 <strong>Hindi names work!</strong> Try adding:<br>
+            Anda → Egg &nbsp;•&nbsp; Aloo → Potato &nbsp;•&nbsp; Dahi → Curd<br>
+            Chawal → Rice &nbsp;•&nbsp; Roti → Bread &nbsp;•&nbsp; Pyaz → Onion<br>
+            Tamatar → Tomato &nbsp;•&nbsp; Doodh → Milk &nbsp;•&nbsp; Makhan → Butter<br>
+            Cheeni → Sugar &nbsp;•&nbsp; Namak → Salt &nbsp;•&nbsp; Shimla Mirch → Capsicum
+          </div>
+        </div>
+      </div>
+      <p style="margin: auto; font-size: 18px;">Made with 💖 by Mahika & Khushboo</p>
+
+    </div>
+    
+  </div>
+  
+  <script src="script.js"></script>
+
+</body>
+</html>                                                                                                                                            
